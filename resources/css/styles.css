@@ -1,0 +1,629 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*grid applied to body*/
+
+body {
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.5fr 100vh 0.3fr 2fr 0.3fr 2fr 0.3fr 2fr 0.5fr;
+    grid-template-areas: "head head head head head head"
+        "welc welc welc welc welc welc"
+        "title1 title1 title1 title1 title1 title1"
+        "cont1 cont1 cont1 cont1 cont1 cont1"
+        "title2 title2 title2 title2 title2 title2"
+        "cont2 cont2 cont2 cont2 cont2 cont2"
+        "title3 title3 title3 title4 title4 title4"
+        "cont3 cont3 cont3 cont4 cont4 cont4"
+        "foot foot foot foot foot foot";
+    gap: 0.5rem;
+    margin: 0;
+    background-color: #406e74;
+}
+
+/*header with logo and navbar flexbox applied*/
+
+#navbar {
+    grid-area: head;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    width:100%;
+    position: fixed;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#dev {
+    color: rgb(89, 87, 84);
+    text-decoration: none;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
+#between:hover {
+    color: darkorange;
+}
+
+/* navigation */
+
+#navbar1 {
+position: fixed;
+margin-top: 0;
+right: 0;
+}
+
+#navbar1 ul {
+    margin-bottom: 0.7rem;
+}
+
+#navbar1 ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#navbar1 li a {
+    text-decoration: none;
+    color: black;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+#navbar1 ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 1px;
+    bottom: -15px;
+    width: 85%;
+    height: 3px;
+    background-color: white;
+    transition: 0.5s ease-out;
+}
+
+li#nav1:hover::before {
+    background-color: darkorange;
+    bottom: -3px;
+    width: 85%;
+}
+
+li#nav2:hover::before {
+    background-color: darkorange;
+    bottom: -3px;
+    width: 85%;
+}
+
+li#nav3:hover::before {
+    background-color: darkorange;
+    bottom: -3px;
+    width: 85%;
+}
+
+
+/*welcome section*/
+
+#welcome-section {
+    grid-area: welc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    scroll-margin-top: 160px;
+    background-color: #406e74;
+    padding: 0 2rem 0 2rem;
+}
+
+#web-dev {
+    padding-right: 2rem;
+}
+
+#welcome-section h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+#phone {
+    color: #6aada7;
+}
+
+#phone:hover {
+    color: darkorange;
+    cursor: pointer;
+}
+
+#my-skills {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.box,
+.box1,
+.box2 {
+    min-width: 112px;
+    min-height: 112px;
+    background-color: #6aada7;
+    border: 1px solid white;
+    position: relative;
+}
+
+.box3,
+.box4 {
+    min-width: 112px;
+    min-height: 112px;
+    background-color: gainsboro;
+    opacity: 0.3;
+    position: relative;
+}
+
+.box {
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+.box1 {
+    animation-name: example1;
+    animation-duration: 4s;
+}
+
+.box2 {
+    animation-name: example2;
+    animation-duration: 4s;
+}
+
+.box3 {
+    animation-name: example3;
+    animation-duration: 4s;
+}
+
+.box4 {
+    animation: example4 4s;
+}
+
+.box h4,
+.box1,
+.box2,
+.box3,
+.box4 {
+    text-align: center;
+    line-height: 5rem;
+}
+
+a h4 {
+    color: rgb(89, 87, 84);
+    text-decoration: none;
+}
+
+@keyframes example {
+    0% {
+        background-color: white;
+        opacity: 0;
+        left: 20vw;
+        top: 0px;
+    }
+
+    100% {
+        background-color: #6aada7;
+        opacity: 1;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes example1 {
+    0% {
+        background-color: white;
+        opacity: 0;
+        left: 0px;
+        top: 20vh;
+    }
+
+    100% {
+        background-color: #6aada7;
+        opacity: 1;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes example2 {
+    0% {
+        background-color: white;
+        opacity: 0;
+        left: 0px;
+        top: -20vh;
+    }
+
+    100% {
+        background-color: #6aada7;
+        opacity: 1;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes example3 {
+    0% {
+        background-color: white;
+        opacity: 0;
+        left: 15vw;
+        top: 0px;
+    }
+
+    100% {
+        background-color: gainsboro;
+        opacity: 0.3;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes example4 {
+    0% {
+        background-color: white;
+        opacity: 0;
+        left: 0px;
+        top: 10vh;
+    }
+
+    100% {
+        background-color: gainsboro;
+        opacity: 0.3;
+        left: 0px;
+        top: 0px;
+    }
+
+}
+
+/*works title*/
+
+#projects-title {
+    grid-area: title1;
+    padding-left: 2rem;
+    scroll-margin-top: 105px;
+}
+
+.pro-title h2 {
+    color: rgb(28, 27, 26);
+}
+
+.project-tile-title {
+    padding-left: 2rem;
+}
+
+/*css, html projects section*/
+
+#projects {
+    grid-area: cont1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+.project-tile,
+.project-tile1 {
+    width: 30%;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(229, 226, 220);
+}
+
+.project-tile:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+a#link-project {
+    font-size: 1.5rem;
+    color: #406e74;
+    text-decoration: none;
+}
+
+a#link-project:hover {
+    color: #6aada7;
+    text-decoration: underline;
+}
+
+a.link-project1 {
+    font-size: 1.5rem;
+    color: #406e74;
+    text-decoration: none;
+}
+
+a.link-project1:hover {
+    color: #6aada7;
+    text-decoration: underline;
+}
+
+
+.project-tile img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#projects-title1 {
+    grid-area: title2;
+    padding-left: 2rem;
+    scroll-margin-top: 105px;
+}
+
+#blogs {
+    grid-area: cont2;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+.project-tile1:hover .overlay {
+    opacity: 1;
+}
+
+.project-tile1 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*title about contact form*/
+
+#projects-title3 {
+    grid-area: title3;
+    padding-left: 2rem;
+    scroll-margin-top: 105px;
+}
+
+#projects-title4 {
+    grid-area: title4;
+    padding-left: 2rem;
+    scroll-margin-top: 105px;
+}
+
+/*about and form*/
+
+#about {
+    grid-area: cont3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    scroll-margin-top: 170px;
+}
+
+#ged-image {
+    width: 100px;
+    height: auto;
+    padding: 0 1rem 0 1rem;
+}
+
+#ged-image img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 5%;
+
+}
+
+/*form*/
+
+#form-container {
+    grid-area: cont4;
+} 
+
+#form-middle {
+    width:60%;
+    display:block;
+    margin:auto; 
+}
+
+
+label {
+    width: 20rem;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+input {
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+    height: 1.5rem;
+    width: 20rem;
+}
+
+textarea {
+    margin: 1rem 0 0.8rem 0;
+    vertical-align: top;
+}
+
+#submit {
+    background-color: #6aada7;
+    color: white;
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+input#submit {
+    width: 20.8rem;
+}
+
+/*footer*/
+
+footer {
+    grid-area: foot;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #6aada7;
+    color: white;
+}
+
+a.copyright-link {
+    color: rgb(71, 69, 66);
+    text-decoration: none;
+}
+
+a#profile-link {
+    color: rgb(71, 69, 66);
+    text-decoration: none;
+}
+
+h5 {
+    color: rgb(71, 69, 66);
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+#links a {
+    color: rgb(38, 37, 36);
+}
+
+/* media */
+
+@media only screen and (max-width: 1100px) {
+    #welcome-section h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    #web-dev {
+        width: 70%;
+    }
+
+    .box,
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+        min-width: 96px;
+        min-height: 96px;
+    }
+
+    .box h4,
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+        line-height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+
+    body {
+        width: 100%;
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 100vh 0.3fr 6fr 0.3fr 6fr 0.3fr 2fr 0.3fr 2fr 0.5fr;
+        grid-template-areas: "head"
+            "welc"
+            "title1"
+            "cont1"
+            "title2"
+            "cont2"
+            "title3"
+            "cont3"
+            "title4"
+            "cont4"
+            "foot";
+        gap: 0.5rem;
+        margin: 0;
+        background-color: #406e74;
+    }
+
+
+    .project-tile,
+    .project-tile1 {
+        width: 70%;
+    }
+
+    header {
+        height: 100px;
+    }
+
+    #container-logo {
+        padding-bottom: 1.2rem;
+    }
+
+    #navbar ul li {
+        font-size: 0.9rem;
+    }
+
+    #navbar ul li a {
+        padding-right: 0.3rem;
+    }
+
+    #welcome-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .box,
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+        min-width: 80px;
+        min-height: 80px;
+    }
+
+    .box h4,
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+        line-height: 2rem;
+    }
+}
